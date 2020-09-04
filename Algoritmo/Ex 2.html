@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 2</title>
+</head>
+<body>
+    Qual o valor da primeira nota ? <input id="nota1"><br>
+    Qual o valor da segunda nota ? <input id="nota2"><br>
+    Qual o valor da terceira nota ? <input id="nota3"><br>
+    <button onclick="calcular()">Analisar desempenho</button><br>
+    <div id="texto"></div>
+</body>
+</html>
+<script>
+    function calcular() {
+        texto.innerHTML = '';
+        var notas = `${Number(nota1.value) + Number(nota2.value) + Number(nota3.value)}`;
+        var total = notas/3;
+        texto.innerHTML += `Sua média foi de ${total}`;
+        if (total >= 9.4){
+            texto.innerHTML += "<br>Parabéns, você é fora de série!";
+        }
+    }
+
+</script>
+<!-- 2. Norma Ligna é muito estudiosa e sua meta é sempre ser uma aluna fora de série.
+Na faculdade onde estuda os "fora de série" são os alunos com média acima de 9,4. 
+Portanto, para ajudá-la, crie um programa em HTML/JS o qual:
+
+a) Pergunte o valor de 3 notas
+
+b) Ao clicar num botão "Analisar desempenho", calcule a média entre as notas e exiba na tela 
+a frase "Sua média foi de X", onde X é a média calculada
+
+c) Somente caso a média for acima de 9,4, exibir também a frase "Parabéns, você é fora de série!" -->

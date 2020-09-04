@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 4</title>
+</head>
+<body>
+    Quantas latinhas de refrigerante toma por dia ? <input id="latinhas"><br>
+    <button onclick="calcular()">Quantos refris?</button><br>
+    <div id="texto"></div>
+</body>
+</html>
+<script>
+    function calcular() {
+        texto.innerHTML = '';
+        var total = Number(latinhas.value) * 365;
+        texto.innerHTML += total;
+        if(total >= 500){
+            texto.innerHTML += "<br><span style='color: white; background-color: red;'>Cuidado com a diabetes!"
+        }
+}
+</script>
