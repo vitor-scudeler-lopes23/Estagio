@@ -1,0 +1,13 @@
+- Repor estoque de forma econômica - (Sem perda de produtos.)
+- Controlar nível de estoque existente - (KG ou sacos?)
+- Analisar movimentação do estoque, Entrada e saída - (Data)
+- Controlar o estoque em termos de quantidade - Sacos
+
+-- EstoqueR <= 5      - R de repor
+-- Sacos repor estoque
+
+-- EstoqueR >= 20 || 15
+-- Estoque já está reposto
+
+-- EstoqueD >= 10     - D de Data 
+-- Revisar estoque (estragado)
