@@ -9,51 +9,133 @@ body{
 /* Cabeçalho a baixo*/
 
 .header{
-    /* margin-top: 2%; */
-    width: 100%;
-    height: 100px;
-    /* border-radius: 20px; */
-    background-color: white;
-    }
+/* margin-top: 2%; */
+width: 100%;
+height: 100px;
+/* border-radius: 20px; */
+background-color: white;
+}
     
-    .Logo{
-        width: 15%;
-        float: left;
-        margin-left: 4%;
-        margin-top: 2%;
-    }
+.Logo{
+    width: 15%;
+    float: left;
+    margin-left: 4%;
+    margin-top: 2%;
+}
     
-    .naveg ul{
-        margin: 0 auto;
-    }
+.naveg ul{
+    margin: 0 auto;
+}
     
-    .naveg ul li{
-        display: inline-block;
-        text-decoration: none;
-        font-size: 25px;
-        margin-left: 2%;
-        margin-top: 2%;
-    }
+.naveg ul li{
+    display: inline-block;
+    text-decoration: none;
+    font-size: 25px;
+    margin-left: 2%;
+    margin-top: 2%;
+}
     
-    .esquerda{
-        margin-left: 700px;
-    }
+.esquerda{
+    margin-left: 700px;
+}
     
-    .links{
-        color: #6E6E6E;
-        text-decoration: none;
-    }
+.links{
+    color: #6E6E6E;
+    text-decoration: none;
+}
     
-    .links_color:hover{
-        color: #000000;
-    }
+.links_color:hover{
+    color: #000000;
+}
     
-    .esquerda2{
-        margin-left: 10px ;
-    }
+.esquerda2{
+    margin-left: 10px ;
+}
+    /* Cabeçalho a cima */
 
+    .fundo{
+        background-image: url("../Imagens/estoque_login_cadastro.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        height: 921px;
+    }
+    
+    /* Login abaixo */
 
-
+.caixa h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+    
+.caixa{
+    background-color: #BDBDBD;
+    width: 400px;
+    height: 300px;
+    position: absolute;
+    left: 38%;
+    top: 30%;
+    font-size: 75%;
+    border-radius: 20px;
+    opacity: 90%;
+}
+    
+.caixas{
+    width: 200px;
+    border-radius: 7px;
+    margin-left: 20%;
+    padding-left: 23px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    
+}
+    
+.b_entrar{
+    width: 100px;
+    height: 30px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 38%;
+    font-size: 18px;
+    background-color: transparent;
+    border: transparent;
+}
+    
+.b_entrar:hover{
+    background-color: orange;
+    border-radius: 10px;
+}
+    
+.criar{
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+}
+    
+.criar_cor:hover{
+    color: blue;
+}
+    
+.baixo{
+    margin-bottom: 10px;
+}
+    
+.esquerdaC{
+    margin-left: 21%;
+}
+    
+.esquerdaC1{
+    margin-left: 18.3%
+}
+    
+.meio{
+    margin-top: 10px;
+}
+    
+    /* Login a cima */
 
 
 
@@ -70,7 +152,7 @@ body{
 /* Rodape abaixo */
 
 .rodape{
-    background-color: #BDBDBD;
+    background-color: #f5f5f5;
     width: 100%;
     height: 100px;
 }
