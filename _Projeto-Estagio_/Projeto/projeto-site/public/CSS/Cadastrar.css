@@ -6,6 +6,18 @@ body{
     background-color: white;
 }
 
+@keyframes anm_caixa{
+    0%{
+        top: 0%;
+        opacity: 0%;
+    }
+    100%{
+        top: 17%;
+        opacity: 90%;
+    }
+}
+
+
 /* Cabeçalho a baixo*/
 
 .header{
@@ -59,7 +71,7 @@ background-color: white;
         background-repeat: no-repeat;
         background-size: cover;
         position: relative;
-        height: 921px;
+        height: 1000px;
     }
     
     /* Login abaixo */
@@ -71,18 +83,26 @@ background-color: white;
     
 .caixa{
     background-color: #BDBDBD;
-    width: 400px;
-    height: 300px;
+    width: 450px;
+    height: 730px;
     position: absolute;
-    left: 38%;
-    top: 30%;
+    left: 37%;
+    top: 15%;
     font-size: 75%;
     border-radius: 20px;
     opacity: 90%;
+    animation-name: anm_caixa;
+    animation-duration: 2.5s;
 }
-    
+
+.texto_caixa{
+    margin-left: 22%;
+    font-size: 17px;
+}
+
 .caixas{
-    width: 200px;
+    width: 230px;
+    font-size: 12px;
     border-radius: 7px;
     margin-left: 20%;
     padding-left: 23px;
@@ -90,32 +110,32 @@ background-color: white;
     padding-top: 10px;
     padding-bottom: 10px;
     margin-bottom: 10px;
-    
 }
     
-.b_entrar{
-    width: 100px;
+.b_criar{
+    width: 150px;
     height: 30px;
     margin-top: 10px;
     margin-bottom: 20px;
-    margin-left: 38%;
+    margin-left: 34%;
     font-size: 18px;
     background-color: transparent;
     border: transparent;
+    cursor: pointer;
 }
     
-.b_entrar:hover{
+.b_criar:hover{
     background-color: orange;
     border-radius: 10px;
 }
     
-.criar{
+.entrar{
     text-decoration: none;
     color: black;
     font-size: 15px;
 }
     
-.criar_cor:hover{
+.entrar_cor:hover{
     color: blue;
 }
     
@@ -148,6 +168,18 @@ background-color: white;
 }
 
 /* Barra a cima */
+
+.error{
+    background-color: red;
+    margin-top: 27%;
+    margin-right: 0.2%;
+    width: 300px;
+    height: 170px;
+    border-radius: 10px;
+    border: 5px solid white;
+    float: right;
+    opacity: 85%;
+}
 
 /* Rodape abaixo */
 

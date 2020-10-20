@@ -24,7 +24,6 @@ width: 100%;
 height: 100px;
 /* border-radius: 20px; */
 background-color: white;
-box-shadow: 3px 1px 3px black;
 }
 
 .Logo{
@@ -35,9 +34,7 @@ box-shadow: 3px 1px 3px black;
 }
 
 .naveg ul{
-    
-    margin: 0%;
-    
+    margin: 0 auto;
 }
 
 .naveg ul li{
@@ -46,7 +43,6 @@ box-shadow: 3px 1px 3px black;
     font-size: 25px;
     margin-left: 2%;
     margin-top: 2%;
-    text-align: center;
 }
 
 .esquerda{
@@ -68,41 +64,19 @@ box-shadow: 3px 1px 3px black;
 
 /* Cabeçalho a cima */
 
-/* Texto saiba mais abaixo */
+/* Problema abaixo */
 
-.saiba{
-    text-align: center;
-    position: absolute;
-    top: 35%;
-    left: 30%;
-}
 
-.saiba h1{
-    color: #000000;
-    font-size: 50px;
-}
 
-.b_saiba{
-    color: white;
-    margin: 0 auto;
-    margin-left: -60px;
-    font-size: 24px;
-    border-radius: 5px;
-    text-decoration: none;
-    background-color: #0404B4;
-    border: none;
-    cursor: pointer;
-}
-
-/* Texto saiba mais acima */
+/* Problema a cima */
 
 /* Barra abaixo */
 
-/* .barra{
-    /* background-color: black;     
+.barra{
+    background-color: black;
     width: 100%;
     height: 5px;
-} */
+}
 
 /* Barra a cima */
 
@@ -112,7 +86,6 @@ box-shadow: 3px 1px 3px black;
     background-color: #f5f5f5;
     width: 100%;
     height: 100px;
-    box-shadow: -15px 0px 3px black;
 }
 
 .rodape ul{

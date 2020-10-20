@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
     <link rel="stylesheet" href="CSS/Cadastrar.css">
     <title>Inventory Control</title>
 </head>
+
 <body>
     <div class="header">
         <div class="container">
@@ -19,25 +23,47 @@
             </div>
         </div>
     </div>
-        <div class="fundo">
-            <div class="caixa">
-                <h2>Entrar na conta</h2>
-                <form>
-                    <label>
-                        <input class="caixas" id="usuario" name="login" type="text" placeholder="NOME DE USUÁRIO">
-                    </label>
-                    <label>
-                        <input class="caixas" id="senhas" name="senha" type="password" placeholder="DIGITE SUA SENHA">
-                    </label>
-                    <button class="b_entrar">Entrar</button>
-                </form>
-                <div>
-                    <span class="criar esquerdaC">Não tem uma conta ? </span><a class="criar criar_cor" href="Cadastrar.html">CRIAR CONTA</a>
-                    <div class="meio"></div>
-                    <span class="criar esquerdaC1">Não consegue fazer login ? </span><a class="criar criar_cor" href="Problema.html">PROBLEMA</a>
-                </div>
+    <div class="fundo">
+        <div class="caixa">
+            <h2>Crie sua conta</h2>
+            <form onsubmit="verificar()" <label><b><span class="texto_caixa">Nome empresa</span></b>
+                <input class="caixas" id="usuario" name="login" type="text" placeholder="NOME DA EMPRESA">
+                </label>
+                <label><b><span class="texto_caixa">Digite seu e-mail</span></b>
+                    <input class="caixas" id="email" name="senha" type="text" placeholder="EX: faleconosco@gmail.com">
+                </label>
+                <label><b><span class="texto_caixa">Digite seu cnpj </span></b>
+                    <input class="caixas" id="cnpj" name="senha" type="text" placeholder="EX: 00.000.000/0000-00">
+                </label>
+                <label><b><span class="texto_caixa">Digite seu celular</span></b>
+                    <input class="caixas" id="celular" name="senha" type="text" placeholder="EX: (00) 00000-0000">
+                </label>
+                <label><b><span class="texto_caixa">Digite o endereço</span></b>
+                    <input class="caixas" id="endereco" name="senha" type="text" placeholder="DIGITE O ENDEREÇO">
+                </label>
+                <label><b><span class="texto_caixa">Digite o número do endereço</span></b>
+                    <input class="caixas" id="numero_endereco" name="senha" type="text"
+                        placeholder="DIGITE O NÚMERO DO ENDEREÇO">
+                </label>
+                <label><b><span class="texto_caixa">Digite sua senha</span></b>
+                    <input class="caixas" id="senha" name="senha" type="password" placeholder="DIGITE SUA SENHA">
+                </label>
+                <label><b><span class="texto_caixa">Confirme sua senha</span></b>
+                    <input class="caixas" id="confirma_senha" name="senha" type="password"
+                        placeholder="CONFIRME SUA SENHA">
+                </label>
+                <button class="b_criar" type="submit"><b>CRIAR CONTA</b></button>
+            </form>
+            <div>
+                <span class="entrar esquerdaC">Já tem uma conta ? </span><a class="entrar entrar_cor"
+                    href="Login.html">ENTRAR NA CONTA</a>
+                <div class="meio"></div>
+                <span class="entrar esquerdaC1">Não consegue fazer o cadastro ? </span><a class="entrar entrar_cor"
+                    href="Problema.html">CLIQUE AQUI</a>
             </div>
         </div>
+        <div class="error" id="texto" style="display: none;"></div>
+    </div>
     <div class="barra"></div>
     <div class="rodape">
         <ul>
@@ -51,4 +77,113 @@
         <a href=""><img src="Imagens/insta.png" class="RSocial"></a>
     </div>
 </body>
+
 </html>
+<script>
+    let erros = [];
+    function verificar() {
+        event.preventDefault();
+
+        let login = (usuario.value);
+        login = login.trimStart().trimEnd();
+
+        let e_mail = (email.value);
+        e_mail = e_mail.trimStart().trimEnd();
+
+        let cnpj1 = (cnpj.value);
+        cnpj1 = cnpj1.trimStart().trimEnd();
+
+        let celular1 = (celular.value);
+        celular1 = celular1.trimStart().trimEnd();
+
+        let endereco1 = (endereco.value);
+        endereco = endereco.trimStart().trimEnd();
+
+        let n_endereco = (numero_endereco.value);
+        n_endereco = n_endereco.trimStart().trimEnd();
+
+        let senha1 = (senha.value);
+        senha1 = senha1.trimStart().trimEnd();
+
+        let c_senha = (confirma_senha.value);
+        confirma_senha = confirma_senha.trimStart().trimEnd();
+        erros = []; // interpolação
+
+        if (login.length == 0) {
+            erros.push('Nome empresa inválido')
+        }
+
+        if (e_mail.indexOf('@') == -1 || e_mail.indexOf('.com') == -1 || !e_mail) {
+            erros.push('E-mail inválido')
+        }
+
+        if (cnpj1.length < 14) {
+            erros.push('CPNJ inválido')
+        }
+
+        if (endereco1.length == 0) {
+            erros.push('Nome empresa inválido')
+        }
+
+        if (n_endereco.length == 0) {
+            erros.push('Nome empresa inválido')
+        }
+
+        if (senha.length == 0) {
+            erros.push('Senha inválida')
+        }
+
+        if (erros.length > 0) {
+            texto.style.display = 'block'
+        }
+
+            for (let contador = 0; contador < erros.length; contador++) {
+                texto.innerHTML += `${erros[contador]}<br>`
+            }
+
+            if (erros.length == 0) {
+                texto.style.display = 'none'
+                alert(`Estamos quase lá ${usuario.value}!! Verifique agora seu email para confirmação`)
+                window.location.assign("Login.html")
+
+                for (let contador = 0; contador < erros.length; contador++) {
+                    texto.innerHTML += `${erros[contador]}<br>`
+                }
+            }
+        }
+
+
+
+</script>
+<script>
+    // function mascara(i, t) {
+
+    //     var v = i.value;
+
+    //     if (isNaN(v[v.length - 1])) {
+    //         i.value = v.substring(0, v.length - 1);
+    //         return;
+    //     }
+
+    //     if (t == "cnpj") {
+    //         i.setAttribute("maxlength", "18");
+    //         if (v.length == 2 || v.length == 6) i.value += ".";
+    //         if (v.length == 10) i.value += "/";
+    //         if (v.length == 15) i.value += "-";
+    //     }
+
+    //     if (t == "celular") {
+    //         i.setAttribute("maxlength", "10");
+    //         if (i.value == 0) i.value += "(";
+    //         if (v.length == 2) i.value += ")";
+    //         if (v.length == 5) i.value += "-";
+    //     }
+    // }
+
+
+
+</script>
+<script type="text/javascript">
+        $("#celular").mask("(00) 00000-0000");
+        $("#cnpj").mask("00.000.000/0000-00");
+</script>

@@ -6,6 +6,18 @@ body{
     background-color: white;
 }
 
+@keyframes anm_caixa{
+    0%{
+        top: 0%;
+        opacity: 0%;
+    }
+    100%{
+        top: 30%;
+        opacity: 90%;
+    }
+}
+
+
 /* Cabeçalho a baixo*/
 
 .header{
@@ -69,6 +81,12 @@ body{
     margin-bottom: 20px;
 }
 
+.texto_caixa{
+    margin-left: 22%;
+    font-size: 15px;
+}
+
+
 .caixa{
     background-color: #BDBDBD;
     width: 400px;
@@ -79,6 +97,8 @@ body{
     font-size: 75%;
     border-radius: 20px;
     opacity: 90%;
+    animation-name: anm_caixa;
+    animation-duration: 2.5s;
 }
 
 .caixas{
@@ -98,10 +118,11 @@ body{
     height: 30px;
     margin-top: 10px;
     margin-bottom: 20px;
-    margin-left: 38%;
+    margin-left: 37%;
     font-size: 18px;
     background-color: transparent;
     border: transparent;
+    cursor: pointer;
 }
 
 .b_entrar:hover{

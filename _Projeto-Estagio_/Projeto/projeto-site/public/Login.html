@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/Login.css">
     <title>Inventory Control</title>
 </head>
+
 <body>
     <div class="header">
         <div class="container">
@@ -19,25 +21,28 @@
             </div>
         </div>
     </div>
-        <div class="fundo">
-            <div class="caixa">
-                <h2>Entrar na conta</h2>
-                <form>
-                    <label>
-                        <input class="caixas" id="usuario" name="login" type="text" placeholder="NOME DE USUÁRIO">
-                    </label>
-                    <label>
-                        <input class="caixas" id="senhas" name="senha" type="password" placeholder="DIGITE SUA SENHA">
-                    </label>
-                    <button class="b_entrar">Entrar</button>
-                </form>
-                <div>
-                    <span class="criar esquerdaC">Não tem uma conta ? </span><a class="criar criar_cor" href="Cadastrar.html">CRIAR CONTA</a>
-                    <div class="meio"></div>
-                    <span class="criar esquerdaC1">Não consegue fazer login ? </span><a class="criar criar_cor" href="Problema.html">PROBLEMA</a>
-                </div>
+    <div class="fundo">
+        <div class="caixa">
+            <h2>Entrar na conta</h2>
+            <form method="post" onsubmit="return verificar(), entrar()">
+                <label><b><span class="texto_caixa">Digite seu nome de usuário</span></b>
+                    <input class="caixas" id="usuario" name="login" type="text" placeholder="NOME DE USUÁRIO">
+                </label>
+                <label><b><span class="texto_caixa">Digite sua senha</span></b>
+                    <input class="caixas" id="senhas" name="senha" type="password" placeholder="DIGITE SUA SENHA">
+                </label>
+                <button class="b_entrar">Entrar</button>
+            </form>
+            <div>
+                <span class="criar esquerdaC">Não tem uma conta ? </span><a class="criar criar_cor"
+                    href="Cadastrar.html">CRIAR CONTA</a>
+                <div class="meio"></div>
+                <span class="criar esquerdaC1">Não consegue fazer login ? </span><a class="criar criar_cor"
+                    href="Problema.html">CLIQUE AQUI</a>
             </div>
         </div>
+        <div class="error" id="texto" style="display: none;"></div>
+    </div>
     <div class="barra"></div>
     <div class="rodape">
         <ul>
@@ -51,4 +56,74 @@
         <a href=""><img src="Imagens/insta.png" class="RSocial"></a>
     </div>
 </body>
+
 </html>
+<script>
+    erros = [];
+    function entrar() {
+        var formulario = new URLSearchParams(new FormData(form_login));
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            body: formulario
+        }).then(resposta => {
+
+            if (resposta.ok) {
+
+                resposta.json().then(json => {
+
+                    sessionStorage.login_usuario_meuapp = json.login;
+                    sessionStorage.nome_usuario_meuapp = json.login;
+
+                    window.location.href = 'dashboard.html';
+                });
+
+            } else {
+
+                console.log('Erro de login!');
+
+                response.text().then(texto => {
+                    console.error(texto);
+                    finalizar_aguardar(texto);
+                });
+            }
+        });
+
+        return false;
+    }
+
+
+
+    function verificar() {
+        event.preventDefault();
+
+        let login1 = (usuario.value);
+        let senha1 = (senhas.value);
+        texto.innerHTML = '';
+        erros = [];
+
+        if (login1.length == 0) {
+            erros.push('Nome inválido')
+        }
+        if (senha1.length == 0) {
+            erros.push('Senha inválida')
+        }
+        if (erros.length > 0) {
+            texto.style.display = 'block'
+
+            for (let contador = 0; contador < erros.length; contador++) {
+                texto.innerHTML += `${erros[contador]}<br>`
+            }
+        }
+        if (erros.length == 0) {
+            texto.style.display = 'none'
+
+            for (let contador = 0; contador < erros.length; contador++) {
+                texto.innerHTML += `${erros[contador]}<br>`
+            }
+        } else {
+            entrar()
+        }
+    }
+    
+
+</script>
