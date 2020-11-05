@@ -1,0 +1,140 @@
+/* AQUI FICA RODAPÉ E HEADER DE RESPONSIVO */
+
+@media screen and (min-width: 600px) and (max-width: 767px){
+    .Logo{
+        width: 26%;
+        margin-left: 4%;
+        margin-top: 1.5%;
+    }
+    
+    .header{
+        height: 40px;
+        }
+        
+        .naveg ul li{
+            font-size: 11px;
+            margin-left: 2%;
+            margin-top: 3%;
+        }
+
+        .esquerda{
+            margin-left: 165px;
+        }
+
+        .rodape{
+            height: 46px;
+        }
+    
+        .textoRodape{
+            margin-left: 5px;
+            font-size: 8px;
+            margin-top: 20px;
+        }
+        
+        .esquerdaCopy{
+            margin-left: 0px;
+        }
+        
+        .esquerdaR{
+            margin-left: 10px;
+        }
+        
+        .RSocial{
+            height: 12px;
+            padding-left: 1%;
+        }
+}
+
+/* ---------------------------------------------------------------------------------- */
+
+@media screen and (min-width: 768px) and (max-width: 991px){
+    .Logo{
+        width: 23%;
+        margin-left: 4%;
+        margin-top: 1%;
+    }
+    
+    .header{
+        height: 40px;
+        }
+        
+        .naveg ul li{
+            font-size: 13px;
+            margin-left: 2%;
+            margin-top: 2%;
+        }
+
+        .esquerda{
+            margin-left: 245px;
+        }
+
+        .rodape{
+            height: 46px;
+        }
+    
+        .textoRodape{
+            margin-left: 10px;
+            font-size: 10px;
+            margin-top: 20px;
+        }
+        
+        .esquerdaCopy{
+            margin-left: 0px;
+        }
+        
+        .esquerdaR{
+            margin-left: 20px;
+        }
+        
+        .RSocial{
+            height: 20px;
+            padding-left: 1%;
+        }
+}
+
+/* ---------------------------------------------------------------------------------- */
+
+@media screen and (min-width: 992px) and (max-width: 1200px){
+    .Logo{
+        width: 23%;
+        margin-left: 4%;
+        margin-top: 1%;
+    }
+    
+    .header{
+        height: 54px;
+        }
+        
+        .naveg ul li{
+            font-size: 18px;
+            margin-left: 2%;
+            margin-top: 2%;
+        }
+
+        .esquerda{
+            margin-left: 300px;
+        }
+
+        .rodape{
+            height: 60px;
+        }
+    
+        .textoRodape{
+            margin-left: 14px;
+            font-size: 13px;
+            margin-top: 20px;
+        }
+        
+        .esquerdaCopy{
+            margin-left: 0px;
+        }
+        
+        .esquerdaR{
+            margin-left: 30px;
+        }
+        
+        .RSocial{
+            height: 27px;
+            padding-left: 1%;
+        }
+}

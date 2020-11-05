@@ -216,12 +216,191 @@ background-color: white;
 .RSocial{
     height: 40px;
     padding-left: 2%;
-    margin-top: -30px;
-    float: right;
 }
 
-.direita{
-    margin-right: 40px;
-}
 
 /* Rodape a cima */
+
+/* ------------------------------------------------------------------------------------ */
+
+@media screen and (min-width: 600px) and (max-width: 767px){
+    .Logo{
+        width: 26%;
+        margin-left: 4%;
+        margin-top: 1.5%;
+    }
+    
+    .header{
+        height: 40px;
+        }
+        
+        .naveg ul li{
+            font-size: 16px;
+            margin-left: 2%;
+            margin-top: 2.5%;
+        }
+
+        .esquerda{
+            margin-left: 220px;
+        }
+
+        .caixa{
+            background-color: #BDBDBD;
+            width: 450px;
+            height: 730px;
+            position: absolute;
+            left: 12%;
+            top: 15%;
+            font-size: 75%;
+            border-radius: 20px;
+            opacity: 90%;
+            animation-name: anm_caixa;
+            animation-duration: 2.5s;
+        }
+
+        .rodape{
+            height: 46px;
+        }
+    
+        .textoRodape{
+            margin-left: 5px;
+            font-size: 8px;
+            margin-top: 20px;
+        }
+        
+        .esquerdaCopy{
+            margin-left: 0px;
+        }
+        
+        .esquerdaR{
+            margin-left: 10px;
+        }
+        
+        .RSocial{
+            height: 12px;
+            padding-left: 1%;
+        }
+}
+
+/* ------------------------------------------------------------------------------------ */
+
+@media screen and (min-width: 768px) and (max-width: 991px){
+    .Logo{
+        width: 23%;
+        margin-left: 4%;
+        margin-top: 1%;
+    }
+    
+    .header{
+        height: 40px;
+        }
+        
+        .naveg ul li{
+            font-size: 15px;
+            margin-left: 2%;
+            margin-top: 2%;
+        }
+
+        .esquerda{
+            margin-left: 300px;
+        }
+
+        .caixa{
+            background-color: #BDBDBD;
+            width: 450px;
+            height: 730px;
+            position: absolute;
+            left: 22%;
+            top: 15%;
+            font-size: 75%;
+            border-radius: 20px;
+            opacity: 90%;
+            animation-name: anm_caixa;
+            animation-duration: 2.5s;
+        }
+
+        .rodape{
+            height: 46px;
+        }
+    
+        .textoRodape{
+            margin-left: 10px;
+            font-size: 10px;
+            margin-top: 20px;
+        }
+        
+        .esquerdaCopy{
+            margin-left: 0px;
+        }
+        
+        .esquerdaR{
+            margin-left: 20px;
+        }
+        
+        .RSocial{
+            height: 20px;
+            padding-left: 1%;
+        }
+}
+
+/* ------------------------------------------------------------------------------------ */
+
+@media screen and (min-width: 992px) and (max-width: 1200px){
+
+    .Logo{
+        width: 23%;
+        margin-left: 4%;
+        margin-top: 1%;
+    }
+    
+    .header{
+        height: 60px;
+        }
+        
+        .naveg ul li{
+            font-size: 18px;
+            margin-left: 2%;
+            margin-top: 2%;
+        }
+
+        .esquerda{
+            margin-left: 400px;
+        }
+
+        .caixa{
+            background-color: #BDBDBD;
+            width: 450px;
+            height: 730px;
+            position: absolute;
+            left: 28%;
+            top: 15%;
+            font-size: 75%;
+            border-radius: 20px;
+            opacity: 90%;
+            animation-name: anm_caixa;
+            animation-duration: 2.5s;
+        }
+
+        .rodape{
+            height: 60px;
+        }
+    
+        .textoRodape{
+            margin-left: 14px;
+            font-size: 13px;
+            margin-top: 20px;
+        }
+        
+        .esquerdaCopy{
+            margin-left: 0px;
+        }
+        
+        .esquerdaR{
+            margin-left: 30px;
+        }
+        
+        .RSocial{
+            height: 27px;
+            padding-left: 1%;
+        }
+}
