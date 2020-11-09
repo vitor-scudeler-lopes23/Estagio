@@ -17,8 +17,8 @@
             <div class="naveg">
                 <!-- ul>li*5>a -->
                 <ul>
-                    <li><a class="links links_color esquerda" href="Home.html#produto">Produto</a></li>
-                    <li><a class="links links_color" href="home.html#sobre">Sobre</a></li>
+                    <li><a class="links links_color esquerda" href="home.html#sobre">Sobre</a></li>
+                    <li><a class="links links_color" href="Home.html#produto">Produto</a></li>
                 </ul>
             </div>
         </div>
@@ -60,7 +60,7 @@
                     href="Login.html">ENTRAR NA CONTA</a>
                 <div class="meio"></div>
                 <span class="entrar esquerdaC1">Não consegue fazer o cadastro ? </span><a class="entrar entrar_cor"
-                    href="Problema.html">CLIQUE AQUI</a>
+                    href="Home.html#problema">CLIQUE AQUI</a>
             </div>
         </div>
         <div class="error" id="texto" style="display: none;"></div>
@@ -124,6 +124,10 @@
             erros.push('CPNJ inválido')
         }
 
+        if (celular1 == 0){
+            erros.push('Celular inválido')
+        }
+
         if (endereco1.length == 0) {
             erros.push('Endereço inválido')
         }
@@ -150,7 +154,7 @@
 
             if (erros.length == 0) {
                 texto.style.display = 'none'
-                alert(`Estamos quase lá ${usuario.value}!! Verifique agora seu email para confirmação`)
+                    
                 window.location.assign("Login.html")
 
                 for (let contador = 0; contador < erros.length; contador++) {

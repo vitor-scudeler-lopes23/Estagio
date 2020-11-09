@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
     <link rel="stylesheet" href="CSS/Home.css">
     <link rel="stylesheet" href="CSS/Responsivo.css">
     <title>Inventory Control</title>
@@ -15,9 +17,9 @@
             <div class="naveg">
                 <!-- ul>li*5>a -->
                 <ul >
-                    <li><a class="links links_color esquerda" href="#produto">Produto</a></li>
-                    <li><a class="links links_color" href="#sobre">Sobre</a></li>
-                    <li><a class="links links_color esquerda2" href="Login.html">Login</a></button></li>
+                    <li><a class="links links_color esquerda" href="#sobre">Sobre</a></li>
+                    <li><a class="links links_color" href="#produto">Produto</a></li>
+                    <li><a class="links links_color" href="Login.html">Login</a></button></li>
                     <li><a class="links links_color" href="Cadastrar.html">Cadatrar-se</a></button></li>
                 </ul>
             </div>
@@ -34,7 +36,7 @@
             <div class="containerS">
             <h1 class="textoH">Nossa história</h1>
                 <p>O Grupo InventoryControl dedica-se exclusivamente para desenvolver e assegurar soluções de serviços em controle de estoque patrimonial e pessoal, com experiência em node js e atuação em serviços de controle de estoque em mercados, lojas de eletrodomésticos e empresas de comercio.</p>
-                <div class="imagem"></div>
+                <div class="imagemS"></div>
             </div>
         </div>
         <div class="barra"></div>
@@ -46,6 +48,34 @@
                 Nosso produto funciona da seguinte forma, um responsável irá sempre estar atualizando as informações do estoque em qualquer momento do dia, colocando quantos produtos estão no estoque e quantos produtos foram retirados do estoque.</p>
             </div>
             
+        </div>
+        <div class="barra"></div>
+        <div id="problema">
+            <div class="containerPB">
+                <div class="imagemPB"></div>
+                <div class="caixa">
+                    <h2>Mande sua dúvida
+                    <br>temos atendimento 24 horas por dia. </h2>
+                    <form onsubmit="verificar()"> 
+                        <label><b><span class="texto_caixa">Nome e sobrenome</span></b>
+                        <input class="caixas" id="nome" type="text" placeholder="NOME">
+                        </label>
+                        <label><b><span class="texto_caixa">Digite seu e-mail</span></b>
+                            <input class="caixas" id="email" type="text" placeholder="EX: faleconosco@gmail.com">
+                        </label>
+                        <label><b><span class="texto_caixa">Digite seu celular</span></b>
+                            <input class="caixas" id="celular" type="text" placeholder="EX: (00) 00000-0000">
+                        </label>
+                        <label><b><span class="texto_caixa">Assunto</span></b>
+                            <input class="caixas" id="assunto" type="text" placeholder="DIGITE O ASSUNTO">
+                        </label>
+                        <label>
+                            <textarea class="caixaR" id="razaoAssunto" cols="40" rows="7" placeholder="RAZÃO DO PROBLEMA"></textarea>
+                        </label>
+                        <button class="enviar" type="submit"><b>ENVIAR PROBLEMA</b></button>
+                    </form>
+            </div>
+            <div class="error" id="texto" style="display: none;"></div>
         </div>
     <div class="barra"></div>
     <div class="rodape">
@@ -61,3 +91,66 @@
     </div>
 </body>
 </html>
+<script>
+    let erros = [];
+    function verificar() {
+        event.preventDefault();
+
+        let nomeU = (nome.value);
+        nomeU = nomeU.trimStart().trimEnd();
+
+        let e_mail = (email.value);
+        e_mail = e_mail.trimStart().trimEnd();
+
+        let celular1 = (celular.value);
+        celular1 = celular1.trimStart().trimEnd();
+
+        let assunto1 = (assunto.value);
+        assunto1 = assunto1.trimStart().trimEnd();
+
+        let assuntoR = (razaoAssunto.value);
+        assuntoR = assuntoR.trimStart().trimEnd();
+        texto.innerHTML = '';
+        erros = []; // interpolação
+
+        if (nomeU.length == 0) {
+            erros.push('Nome inválido')
+        }
+
+        if (e_mail.indexOf('@') == -1 || e_mail.indexOf('.com') == -1 || !e_mail) {
+            erros.push('E-mail inválido')
+        }
+
+        if (celular1 == 0){
+            erros.push('Celular inválido')
+        }
+
+        if(assunto1 == 0){
+            erros.push('Insira um assunto')
+        }
+
+        if (assuntoR.length == 0){
+            erros.push('Escreva seu problema')
+        }
+
+        if (erros.length > 0) {
+            texto.style.display = 'block'
+        }
+
+            for (let contador = 0; contador < erros.length; contador++) {
+                texto.innerHTML += `${erros[contador]}<br>`
+            }
+
+            if (erros.length == 0) {
+                texto.style.display = 'none'
+                alert(`${usuario.value} iremos te responder em até 24 horas!!`)
+
+                for (let contador = 0; contador < erros.length; contador++) {
+                    texto.innerHTML += `${erros[contador]}<br>`
+                }
+            }
+        }
+</script>
+<script type="text/javascript">
+    $("#celular").mask("(00) 00000-0000");
+</script>
