@@ -138,3 +138,49 @@
             padding-left: 1%;
         }
 }
+
+@media screen and (min-width: 1201px) and (max-width: 1400px){
+
+    .Logo{
+        width: 23%;
+        margin-left: 4%;
+        margin-top: 1%;
+    }
+    
+    .header{
+        height: 81px;
+        }
+        
+        .naveg ul li{
+            font-size: 25px;
+            margin-left: 2%;
+            margin-top: 2%;
+        }
+
+        .esquerda{
+            margin-left: 425px;
+        }
+
+        .rodape{
+            height: 70px;
+        }
+    
+        .textoRodape{
+            margin-left: 30px;
+            font-size: 16px;
+            margin-top: 30px;
+        }
+        
+        .esquerdaCopy{
+            margin-left: 50px;
+        }
+        
+        .esquerdaR{
+            margin-left: 30px;
+        }
+        
+        .RSocial{
+            height: 27px;
+            padding-left: 1.5%;
+        }
+}

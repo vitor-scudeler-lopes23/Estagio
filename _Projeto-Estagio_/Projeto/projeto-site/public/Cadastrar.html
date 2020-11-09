@@ -17,8 +17,8 @@
             <div class="naveg">
                 <!-- ul>li*5>a -->
                 <ul>
-                    <li><a class="links links_color esquerda" href="Produto.html">Produto</a></li>
-                    <li><a class="links links_color" href="Sobre.html">Sobre</a></li>
+                    <li><a class="links links_color esquerda" href="Home.html#produto">Produto</a></li>
+                    <li><a class="links links_color" href="home.html#sobre">Sobre</a></li>
                 </ul>
             </div>
         </div>
@@ -26,30 +26,31 @@
     <div class="fundo">
         <div class="caixa">
             <h2>Crie sua conta</h2>
-            <form onsubmit="verificar()" <label><b><span class="texto_caixa">Nome empresa</span></b>
-                <input class="caixas" id="usuario" name="login" type="text" placeholder="NOME DA EMPRESA">
+            <form onsubmit="verificar()"> 
+                <label><b><span class="texto_caixa">Nome empresa</span></b>
+                <input class="caixas" id="usuario" type="text" placeholder="NOME DA EMPRESA">
                 </label>
                 <label><b><span class="texto_caixa">Digite seu e-mail</span></b>
-                    <input class="caixas" id="email" name="senha" type="text" placeholder="EX: faleconosco@gmail.com">
+                    <input class="caixas" id="email" type="text" placeholder="EX: faleconosco@gmail.com">
                 </label>
                 <label><b><span class="texto_caixa">Digite seu cnpj </span></b>
-                    <input class="caixas" id="cnpj" name="senha" type="text" placeholder="EX: 00.000.000/0000-00">
+                    <input class="caixas" id="cnpj" type="text" placeholder="EX: 00.000.000/0000-00">
                 </label>
                 <label><b><span class="texto_caixa">Digite seu celular</span></b>
-                    <input class="caixas" id="celular" name="senha" type="text" placeholder="EX: (00) 00000-0000">
+                    <input class="caixas" id="celular" type="text" placeholder="EX: (00) 00000-0000">
                 </label>
                 <label><b><span class="texto_caixa">Digite o endereço</span></b>
-                    <input class="caixas" id="endereco" name="senha" type="text" placeholder="DIGITE O ENDEREÇO">
+                    <input class="caixas" id="endereco" type="text" placeholder="DIGITE O ENDEREÇO">
                 </label>
                 <label><b><span class="texto_caixa">Digite o número do endereço</span></b>
-                    <input class="caixas" id="numero_endereco" name="senha" type="text"
+                    <input class="caixas" id="numero_endereco" type="text"
                         placeholder="DIGITE O NÚMERO DO ENDEREÇO">
                 </label>
                 <label><b><span class="texto_caixa">Digite sua senha</span></b>
-                    <input class="caixas" id="senha" name="senha" type="password" placeholder="DIGITE SUA SENHA">
+                    <input class="caixas" id="senha" type="password" placeholder="DIGITE SUA SENHA">
                 </label>
                 <label><b><span class="texto_caixa">Confirme sua senha</span></b>
-                    <input class="caixas" id="confirma_senha" name="senha" type="password"
+                    <input class="caixas" id="confirma_senha" type="password"
                         placeholder="CONFIRME SUA SENHA">
                 </label>
                 <button class="b_criar" type="submit"><b>CRIAR CONTA</b></button>
@@ -98,7 +99,7 @@
         celular1 = celular1.trimStart().trimEnd();
 
         let endereco1 = (endereco.value);
-        endereco = endereco.trimStart().trimEnd();
+        endereco1 = endereco1.trimStart().trimEnd();
 
         let n_endereco = (numero_endereco.value);
         n_endereco = n_endereco.trimStart().trimEnd();
@@ -107,7 +108,8 @@
         senha1 = senha1.trimStart().trimEnd();
 
         let c_senha = (confirma_senha.value);
-        confirma_senha = confirma_senha.trimStart().trimEnd();
+        c_senha = c_senha.trimStart().trimEnd();
+        texto.innerHTML = '';
         erros = []; // interpolação
 
         if (login.length == 0) {
@@ -123,15 +125,19 @@
         }
 
         if (endereco1.length == 0) {
-            erros.push('Nome empresa inválido')
+            erros.push('Endereço inválido')
         }
 
         if (n_endereco.length == 0) {
-            erros.push('Nome empresa inválido')
+            erros.push('Número do endereço inválido')
         }
 
-        if (senha.length == 0) {
+        if (senha1.length == 0) {
             erros.push('Senha inválida')
+        }
+
+        if (c_senha.length == 0){
+            erros.push('Confirmação de senha inválida')
         }
 
         if (erros.length > 0) {

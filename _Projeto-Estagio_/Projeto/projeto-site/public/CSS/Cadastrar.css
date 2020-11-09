@@ -168,17 +168,19 @@ background-color: white;
 }
 
 /* Barra a cima */
-
 .error{
+    position: absolute;
+    font-size: 106%;
+    top: 42%;
+    left: 73%;
+    text-align: center;
     background-color: red;
-    margin-top: 27%;
-    margin-right: 0.2%;
-    width: 300px;
-    height: 170px;
-    border-radius: 10px;
-    border: 5px solid white;
-    float: right;
-    opacity: 85%;
+    color: white;
+    width: 12%;
+    height: 23%;
+    padding-top: 2%;
+    border-radius: 20px;
+    opacity: 95%;
 }
 
 /* Rodape abaixo */
@@ -403,4 +405,49 @@ background-color: white;
             height: 27px;
             padding-left: 1%;
         }
+}
+
+@media screen and (min-width: 1300px) and (max-width: 1400px){
+    
+    .Logo{
+        width: 21%;
+    }
+
+        .naveg ul li{
+            font-size: 25px;
+            margin-left: 2%;
+            margin-top: 3%;
+        }
+
+        .esquerda{
+            margin-left: 623px;
+        }
+
+        .caixa{
+            left: 35%;
+        }
+
+        .rodape{
+            height: 75px;
+        }
+    
+        .textoRodape{
+            margin-left: 30px;
+            font-size: 16px;
+            margin-top: 30px;
+        }
+        
+        .esquerdaCopy{
+            margin-left: 50px;
+        }
+        
+        .esquerdaR{
+            margin-left: 30px;
+        }
+        
+        .RSocial{
+            height: 27px;
+            padding-left: 1.5%;
+        }
+
 }

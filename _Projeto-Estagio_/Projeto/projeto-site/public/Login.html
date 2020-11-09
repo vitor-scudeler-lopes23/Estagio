@@ -15,8 +15,8 @@
             <div class="naveg">
                 <!-- ul>li*5>a -->
                 <ul>
-                    <li><a class="links links_color esquerda" href="Produto.html">Produto</a></li>
-                    <li><a class="links links_color" href="Sobre.html">Sobre</a></li>
+                    <li><a class="links links_color esquerda" href="Home.html#produto">Produto</a></li>
+                    <li><a class="links links_color" href="home.html#sobre">Sobre</a></li>
                 </ul>
             </div>
         </div>
@@ -60,36 +60,36 @@
 </html>
 <script>
     erros = [];
-    function entrar() {
-        var formulario = new URLSearchParams(new FormData(form_login));
-        fetch("/usuarios/autenticar", {
-            method: "POST",
-            body: formulario
-        }).then(resposta => {
+    // function entrar() {
+    //     var formulario = new URLSearchParams(new FormData(form_login));
+    //     fetch("/usuarios/autenticar", {
+    //         method: "POST",
+    //         body: formulario
+    //     }).then(resposta => {
 
-            if (resposta.ok) {
+    //         if (resposta.ok) {
 
-                resposta.json().then(json => {
+    //             resposta.json().then(json => {
 
-                    sessionStorage.login_usuario_meuapp = json.login;
-                    sessionStorage.nome_usuario_meuapp = json.login;
+    //                 sessionStorage.login_usuario_meuapp = json.login;
+    //                 sessionStorage.nome_usuario_meuapp = json.login;
 
-                    window.location.href = 'dashboard.html';
-                });
+    //                 window.location.href = 'cliente.html';
+    //             });
 
-            } else {
+    //         } else {
 
-                console.log('Erro de login!');
+    //             console.log('Erro de login!');
 
-                response.text().then(texto => {
-                    console.error(texto);
-                    finalizar_aguardar(texto);
-                });
-            }
-        });
+    //             response.text().then(texto => {
+    //                 console.error(texto);
+    //                 finalizar_aguardar(texto);
+    //             });
+    //         }
+    //     });
 
-        return false;
-    }
+    //     return false;
+    // }
 
 
 
@@ -102,7 +102,7 @@
         erros = [];
 
         if (login1.length == 0) {
-            erros.push('Nome inválido')
+            erros.push('Usuário inválido')
         }
         if (senha1.length == 0) {
             erros.push('Senha inválida')
@@ -116,12 +116,13 @@
         }
         if (erros.length == 0) {
             texto.style.display = 'none'
+            window.location.href = 'Cliente.html';
 
             for (let contador = 0; contador < erros.length; contador++) {
                 texto.innerHTML += `${erros[contador]}<br>`
             }
         } else {
-            entrar()
+            // entrar()
         }
     }
     
