@@ -1,3 +1,17 @@
+html{
+    scroll-behavior: smooth;
+   }
+   
+   body{
+       margin: 0;
+       padding: 0;
+       border: 0;
+       font-family: Arial, Helvetica, sans-serif;
+       background-color: white;
+   }
+
+
+
 /* AQUI FICA RODAPÉ E HEADER DE RESPONSIVO */
 
 @media screen and (min-width: 600px) and (max-width: 767px){
