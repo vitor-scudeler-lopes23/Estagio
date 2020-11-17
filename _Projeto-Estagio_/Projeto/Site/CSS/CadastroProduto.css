@@ -1,3 +1,5 @@
+/* Header abaixo */
+
 .cabecalho{
     width: 100%;
     height: 50px;
@@ -55,21 +57,154 @@
     margin-left: 85%;
   }
 
-/* Cadastro produtos abaixo */
+/* Header a cima */
+
+/* Caixa produto abaixo */
 
 .containerCP{
+    background-color: #f5f5f5;
     width: 50%;
-    height: 500px;
-    background-color: red;
+    height: 400px;
 }
 
-.cadastroCP{
-    
+.containerCP h2{
+    margin: 0;
+    position: relative;
+    top: 8%;
+    left: 30%;
 }
 
-/* Cadastro produtos a cima */
+.caixaCP{
+    background-color: #BDBDBD;
+    width: 50%;
+    height: 206px;
+    position: relative;
+    left: 23%;
+    top: 15%;
+    padding-top: 6%;
+    border-radius: 20px;
+}
 
-  /* Barra abaixo */
+.textoCP{
+    margin-left: 35%;
+    margin-top: 10%;
+}
+
+
+.textoCPQ{
+    margin-left: 23%;
+}
+
+.caixas{
+    margin-left: 20%;
+    margin-right: 10%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    height: 23px;
+    width: 49%;
+    padding-left: 9%;
+    border-radius: 8px;
+}
+
+.btn{
+    margin-left: 12%;
+    margin-top: 3%;
+    font-size: 16px;
+    padding: 5px;
+    padding-left: 3%;
+    padding-right: 3%;
+    background-color: transparent;
+    border: transparent;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: orange;
+    border-radius: 20px;
+}
+
+.esquerdaBTN{
+    margin-left: 17%;
+}
+
+/* Caixa produto a cima */
+
+/* Caixa estoque abaixo */
+
+.containerE{
+    position: relative;
+    width: 100%;
+    height: 397px;
+    left: 100%;
+    top: -68%;
+    background-color: #f5f5f5;
+}
+
+.containerE h2{
+    margin: 0;
+    position: relative;
+    top: 7.2%;
+    left: 39%;
+}
+
+.caixaE{
+    background-color: #BDBDBD;
+    width: 50%;
+    height: 292px;
+    position: relative;
+    left: 29%;
+    top: 10%;
+    padding-top: 2%;
+    border-radius: 20px;
+}
+
+.textoE{
+    margin-left: 34%;
+    margin-top: 10%;
+}
+
+.textoEE{
+    margin-left: 27%;
+}
+
+.textoEN{
+    margin-left: 27%;
+}
+
+.textoEC{
+    margin-left: 30%;
+}
+
+.caixasE{
+    margin-left: 20%;
+    margin-right: 10%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    height: 23px;
+    width: 54%;
+    padding-left: 6%;
+    border-radius: 8px;
+}
+
+.btnE{
+    margin-left: 29%;
+    margin-top: 3%;
+    font-size: 16px;
+    padding: 5px;
+    padding-left: 3%;
+    padding-right: 3%;
+    background-color: transparent;
+    border: transparent;
+    cursor: pointer;
+}
+
+.btnE:hover{
+    background-color: orange;
+    border-radius: 20px;
+}
+/* Caixa estoque a cima */
+
+/* Barra abaixo */
 
   .barra{
     background-color: black;     

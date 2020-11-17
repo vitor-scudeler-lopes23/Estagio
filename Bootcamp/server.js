@@ -1,6 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var Usuario =require('./model/Usuario');
+var Empresa =require('./model/Empresa');
 const { Request } = require('mssql');
 
 var server = express();
@@ -14,27 +14,33 @@ server.listen(3333, () => {
 
 server.get('/', async function(request, response){
     
-    var usuario = new Usuario();
+    var empresa = new Empresa();
 
-    var resultado = await usuario.index();
+    var resultado = await empresa.index();
     response.status(200).send(resultado)
 });
 
 server.post('/', async function (request, response){
-    var nome = request.body.nome;
-    var idade = request.body.idade;
+    var nomeEmpresa = request.body.NomeEmpresa;
+    var email = request.body.Email;
+    var cnpj = resquest.body.CNPJ;
+    var telefone = request.body.TelefoneCelular;
+    var numeroendereco = request.body.NumeroEndereco;
+    var senha = request.body.Senha;
 
-    var usuario = new Usuario();
+    var empresa = new Empresa();
 
-   await usuario.create(nome, idade);
+   await empresa.create(NomeEmpresa, Email, CNPJ, TelefoneCelular, Endereco, NumeroEndereco, Senha);
    response.status(201).send("cadastro realizado com sucesso")
 });
 
 server.get('/:idade', async function(request, response) {
     var idade = request.params.idade;
 
-    var usuario = new Usuario();
+    var empresa = new Empresa();
 
-    var resultado = await usuario.find(idade);
+    var resultado = await empresa.find(idade);
     response.status(201).send(resultado);
 })
+
+// server.listen(3333);

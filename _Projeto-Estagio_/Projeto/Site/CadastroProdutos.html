@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
     <link rel="stylesheet" href="CSS/CadastroProduto.css">
     <link rel="stylesheet" href="CSS/Responsivo.css">
+    <link rel="icon" href="./Imagens/LogoStockontrol.png" sizes="">
     <script src="js/menu.js"></script>
-    <title>Inventory Control</title>
+    <title>Stockontrol</title>
 </head>
 <body>
     <div class="sidebar" id="mySidebar">
@@ -21,16 +24,40 @@
           <a href="Home.html" class="sair">Sair</a>
       </div>
       <div class="containerCP">
-            <div class="cadastroCP">
+          <h2>Movimento produtos</h2>
+            <div class="caixaCP">
                 <form>
-                    <label><span>Nome Produto</span>
-                        <input type="text" placeholder="Digite o nome do produto">
+                    <label><span class="textoCP">Nome produto</span>
+                        <input type="text" class="caixas" id="nomeP" placeholder="Digite o nome do produto">
                     </label>
-                    <label><span></span>
-                        <input type="text">
+                    <label><span class="textoCPQ">Quantidade de produtos</span>
+                        <input type="text" class="caixas" id="quantiP" placeholder="Digite a quantidade">
                     </label>
+                    <button class="btn esquerdaBTN">Adicionar</button>
+                    <button class="btn">Remover</button>
                 </form>
             </div>
+            <div class="containerE">
+                <h2>Cadastro estoque</h2>
+                <div class="caixaE">
+                    <form>
+                        <label><span class="textoE">Nome estoque</span>
+                            <input type="text" class="caixasE" id="nomeE" placeholder="Digite o nome do estoque">
+                        </label>
+                        <label><span class="textoEE">Endereço do estoque</span>
+                            <input type="text" class="caixasE" id="enderecoE" placeholder="Digite o endereço do estoque">
+                        </label>
+                        <label><span class="textoEN">Número do endereço</span>
+                            <input type="text" class="caixasE" id="numeroE" placeholder="Digite o número do endereço">
+                        </label>
+                        <label><span class="textoEC">Cep do endereço</span>
+                            <input type="text" class="caixasE" id="cepE" placeholder="Digite o cep do endereço">
+                        </label>
+                        <button class="btnE">Adicionar estoque</button>
+                    </form>
+                </div>
+            </div>
+        </div>
       </div>
     <div class="barra"></div>
     <div class="rodape">
@@ -46,3 +73,9 @@
     </div>
 </body>
 </html>
+<script type="text/javascript">
+    $("#quantiP").mask("0000000");
+    $("#numeroE").mask("000");
+    $("#cepE").mask("00000-000");
+    $("#cnpj").mask("00.000.000/0000-00");
+</script>

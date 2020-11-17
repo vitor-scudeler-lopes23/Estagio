@@ -7,13 +7,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
     <link rel="stylesheet" href="CSS/Cadastrar.css">
-    <title>Inventory Control</title>
+    <link rel="icon" href="./Imagens/LogoStockontrol.png" sizes="">
+    <title>Stockontrol</title>
 </head>
 
 <body>
     <div class="header">
         <div class="container">
-            <a href="Home.html"><img src="Imagens/Logo.PNG" class="Logo"></a>
+            <a href="Home.html"><img src="Imagens/Stockontrol.png" class="Logo"></a>
             <div class="naveg">
                 <!-- ul>li*5>a -->
                 <ul>
@@ -120,11 +121,11 @@
             erros.push('E-mail inválido')
         }
 
-        if (cnpj1.length < 14) {
+        if (cnpj1.length < 18) {
             erros.push('CPNJ inválido')
         }
 
-        if (celular1 == 0){
+        if (celular1.length < 15){
             erros.push('Celular inválido')
         }
 
@@ -136,11 +137,11 @@
             erros.push('Número do endereço inválido')
         }
 
-        if (senha1.length == 0) {
-            erros.push('Senha inválida')
+        if (senha1.length < 5) {
+            erros.push('Senha inválida - minimo 5 caracteres')
         }
 
-        if (c_senha.length == 0){
+        if (c_senha.length == 0 || c_senha.length != senha1.length){
             erros.push('Confirmação de senha inválida')
         }
 
@@ -154,7 +155,7 @@
 
             if (erros.length == 0) {
                 texto.style.display = 'none'
-                    
+                alert(`Obrigado por se cadastrar ${usuario.value}, verifique seu e-mail para a confirmação`)
                 window.location.assign("Login.html")
 
                 for (let contador = 0; contador < erros.length; contador++) {
@@ -195,6 +196,7 @@
 
 </script>
 <script type="text/javascript">
+        $("#numero_endereco").mask("000")
         $("#celular").mask("(00) 00000-0000");
         $("#cnpj").mask("00.000.000/0000-00");
 </script>

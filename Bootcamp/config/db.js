@@ -1,10 +1,10 @@
 var mssql = require('mssql');
 
 var connection = {
-        user: "adminsp", // USUARIO DO BANCO
-        password: "#GfEstag$", // SENHA DO BANCO
-        server: "spservice.database.windows.net", // LOCAL ONDE O BANCO ESTA HOSPEDADO
-        database: "spservice", // NOME DO BANCO DE DADOS
+        user: "adminlocal", // USUARIO DO BANCO
+        password: "Projeto3fs@", // SENHA DO BANCO
+        server: "spstockontrol.database.windows.net", // LOCAL ONDE O BANCO ESTA HOSPEDADO
+        database: "Stockontrol", // NOME DO BANCO DE DADOS
         options: {
             encrypt: true
         }
