@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/Login.css">
+    <link rel="stylesheet" href="../server.js">
     <link rel="icon" href="./Imagens/LogoStockontrol.png" sizes="">
     <title>Stockontrol</title>
 </head>
@@ -26,8 +27,8 @@
         <div class="caixa">
             <h2>Entrar na conta</h2>
             <form method="post" onsubmit="return verificar(), entrar()">
-                <label><b><span class="texto_caixa">Digite seu nome de usuário</span></b>
-                    <input class="caixas" id="usuario" name="login" type="text" placeholder="NOME DE USUÁRIO">
+                <label><b><span class="texto_caixa">Digite seu email</span></b>
+                    <input class="caixas" id="usuario" name="login" type="text" placeholder="DIGITE SEU EMAIL">
                 </label>
                 <label><b><span class="texto_caixa">Digite sua senha</span></b>
                     <input class="caixas" id="senhas" name="senha" type="password" placeholder="DIGITE SUA SENHA">
@@ -97,15 +98,15 @@
     function verificar() {
         event.preventDefault();
 
-        let login1 = (usuario.value);
+        let e_mail = (usuario.value);
         let senha1 = (senhas.value);
         texto.innerHTML = '';
         erros = [];
 
-        if (login1.length == 0) {
-            erros.push('Usuário inválido')
+        if (e_mail.indexOf('@') == -1 || e_mail.indexOf('.com') == -1 || !e_mail) {
+            erros.push('E-mail inválido')
         }
-        if (senha1.length == 0) {
+        if (senha1.length < 5) {
             erros.push('Senha inválida')
         }
         if (erros.length > 0) {
@@ -123,7 +124,7 @@
                 texto.innerHTML += `${erros[contador]}<br>`
             }
         } else {
-            // entrar()
+            entrar()
         }
     }
     
