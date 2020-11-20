@@ -1,15 +1,15 @@
-create database InventoryControl;
-use inventoryControl;
+create database Stockontrol;
+use Stockontrol;
 
 create table Empresa (
 idEmpresa int primary key auto_increment,
 NomeEmpresa varchar(50),
 Email varchar(100), 
-CPNJ char(18),
+CNPJ char(18),
 TelefoneCelular char(14),
 Endereco varchar(100),
-Senha char(10),
-Usuario enum('C','F','A')
+numeroEndereco varchar(3),
+Senha char(20)
 );
 
 create table Fornecedores(
@@ -59,8 +59,8 @@ foreign key (fkProduto) references Produto (idProduto),
 primary key (idMovimentoEstoque, fkEstoque, fkProduto)
 );
 
-insert into Empresa value 
-(null, 'Bloons', '31.956.736/0001-61', 'bloons@gmail.com', 'bloons123', '(11)98172-6145', '8172-6145', 'av franz', '501', '06020-190', 'C');
+insert into Empresa values 
+('Bloons', 'bloons@gmail.com', '31.956.736/0001-61', '(11)98172-6145', 'av franz', '501', 'bloons123');
 
 insert into Fornecedores value
 (null, "Trident", "Ciclete trident", "1");

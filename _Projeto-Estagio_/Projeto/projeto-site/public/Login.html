@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/Login.css">
-    <link rel="stylesheet" href="../server.js">
     <link rel="icon" href="./Imagens/LogoStockontrol.png" sizes="">
     <title>Stockontrol</title>
 </head>
@@ -13,12 +12,12 @@
 <body>
     <div class="header">
         <div class="container">
-            <a href="Home.html"><img src="Imagens/Stockontrol.png" class="Logo"></a>
+            <a href="index.html"><img src="Imagens/Stockontrol.png" class="Logo"></a>
             <div class="naveg">
                 <!-- ul>li*5>a -->
                 <ul>
-                    <li><a class="links links_color esquerda" href="home.html#sobre">Sobre</a></li>
-                    <li><a class="links links_color" href="Home.html#produto">Produto</a></li>
+                    <li><a class="links links_color esquerda" href="index.html#sobre">Sobre</a></li>
+                    <li><a class="links links_color"href="index.html#produto">Produto</a></li>
                 </ul>
             </div>
         </div>
@@ -26,7 +25,7 @@
     <div class="fundo">
         <div class="caixa">
             <h2>Entrar na conta</h2>
-            <form method="post" onsubmit="return verificar(), entrar()">
+            <form id="form_login" method="post" onsubmit="return verificar(), entrar()">
                 <label><b><span class="texto_caixa">Digite seu email</span></b>
                     <input class="caixas" id="usuario" name="login" type="text" placeholder="DIGITE SEU EMAIL">
                 </label>
@@ -40,7 +39,7 @@
                     href="Cadastrar.html">CRIAR CONTA</a>
                 <div class="meio"></div>
                 <span class="criar esquerdaC1">Não consegue fazer login ? </span><a class="criar criar_cor"
-                    href="Home.html#problema">CLIQUE AQUI</a>
+                    href="index.html#problema">CLIQUE AQUI</a>
             </div>
         </div>
         <div class="error" id="texto" style="display: none;"></div>
@@ -62,36 +61,36 @@
 </html>
 <script>
     erros = [];
-    // function entrar() {
-    //     var formulario = new URLSearchParams(new FormData(form_login));
-    //     fetch("/usuarios/autenticar", {
-    //         method: "POST",
-    //         body: formulario
-    //     }).then(resposta => {
+    function entrar() {
+        var formulario = new URLSearchParams(new FormData(form_login));
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            body: formulario
+        }).then(resposta => {
 
-    //         if (resposta.ok) {
+            if (resposta.ok) {
 
-    //             resposta.json().then(json => {
+                resposta.json().then(json => {
 
-    //                 sessionStorage.login_usuario_meuapp = json.login;
-    //                 sessionStorage.nome_usuario_meuapp = json.login;
+                    sessionStorage.login_usuario_meuapp = json.login;
+                    sessionStorage.nome_usuario_meuapp = json.nome;
 
-    //                 window.location.href = 'cliente.html';
-    //             });
+                    window.location.href = 'cliente.html';
+                });
 
-    //         } else {
+            } else {
 
-    //             console.log('Erro de login!');
+                alert('Erro de login!');
 
-    //             response.text().then(texto => {
-    //                 console.error(texto);
-    //                 finalizar_aguardar(texto);
-    //             });
-    //         }
-    //     });
+                response.text().then(texto => {
+                    console.error(texto);
+                    // finalizar_aguardar(texto);
+                });
+            }
+        });
 
-    //     return false;
-    // }
+        return false;
+    }
 
 
 
@@ -118,7 +117,7 @@
         }
         if (erros.length == 0) {
             texto.style.display = 'none'
-            window.location.href = 'Cliente.html';
+            // window.location.href = 'Cliente.html';
 
             for (let contador = 0; contador < erros.length; contador++) {
                 texto.innerHTML += `${erros[contador]}<br>`

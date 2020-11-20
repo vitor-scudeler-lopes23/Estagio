@@ -14,12 +14,12 @@
 <body>
     <div class="header">
         <div class="container">
-            <a href="Home.html"><img src="Imagens/Stockontrol.png" class="Logo"></a>
+            <a href="index.html"><img src="Imagens/Stockontrol.png" class="Logo"></a>
             <div class="naveg">
                 <!-- ul>li*5>a -->
                 <ul>
-                    <li><a class="links links_color esquerda" href="home.html#sobre">Sobre</a></li>
-                    <li><a class="links links_color" href="Home.html#produto">Produto</a></li>
+                    <li><a class="links links_color esquerda" href="index.html#sobre">Sobre</a></li>
+                    <li><a class="links links_color" href="index.html#produto">Produto</a></li>
                 </ul>
             </div>
         </div>
@@ -27,28 +27,28 @@
     <div class="fundo">
         <div class="caixa">
             <h2>Crie sua conta</h2>
-            <form onsubmit="verificar()"> 
+            <form id="form_cadastro" method="post" onsubmit="return verificar(), cadastrar()"> 
                 <label><b><span class="texto_caixa">Nome empresa</span></b>
-                <input class="caixas" id="usuario" type="text" placeholder="NOME DA EMPRESA">
+                <input name="nome" class="caixas" id="usuario" type="text" placeholder="NOME DA EMPRESA">
                 </label>
                 <label><b><span class="texto_caixa">Digite seu e-mail</span></b>
-                    <input class="caixas" id="email" type="text" placeholder="EX: faleconosco@gmail.com">
+                    <input name="login" class="caixas" id="email" type="text" placeholder="EX: faleconosco@gmail.com">
                 </label>
                 <label><b><span class="texto_caixa">Digite seu cnpj </span></b>
-                    <input class="caixas" id="cnpj" type="text" placeholder="EX: 00.000.000/0000-00">
+                    <input name="cnpj" class="caixas" id="cnpj" type="text" placeholder="EX: 00.000.000/0000-00">
                 </label>
                 <label><b><span class="texto_caixa">Digite seu celular</span></b>
-                    <input class="caixas" id="celular" type="text" placeholder="EX: (00) 00000-0000">
+                    <input name="telefone" class="caixas" id="celular" type="text" placeholder="EX: (00) 00000-0000">
                 </label>
                 <label><b><span class="texto_caixa">Digite o endereço</span></b>
-                    <input class="caixas" id="endereco" type="text" placeholder="DIGITE O ENDEREÇO">
+                    <input name="endereco" class="caixas" id="endereco" type="text" placeholder="DIGITE O ENDEREÇO">
                 </label>
                 <label><b><span class="texto_caixa">Digite o número do endereço</span></b>
-                    <input class="caixas" id="numero_endereco" type="text"
+                    <input name="Nuendereco" class="caixas" id="numero_endereco" type="text"
                         placeholder="DIGITE O NÚMERO DO ENDEREÇO">
                 </label>
                 <label><b><span class="texto_caixa">Digite sua senha</span></b>
-                    <input class="caixas" id="senha" type="password" placeholder="DIGITE SUA SENHA">
+                    <input name="senha" class="caixas" id="senha" type="password" placeholder="DIGITE SUA SENHA">
                 </label>
                 <label><b><span class="texto_caixa">Confirme sua senha</span></b>
                     <input class="caixas" id="confirma_senha" type="password"
@@ -61,7 +61,7 @@
                     href="Login.html">ENTRAR NA CONTA</a>
                 <div class="meio"></div>
                 <span class="entrar esquerdaC1">Não consegue fazer o cadastro ? </span><a class="entrar entrar_cor"
-                    href="Home.html#problema">CLIQUE AQUI</a>
+                    href="index.html#problema">CLIQUE AQUI</a>
             </div>
         </div>
         <div class="error" id="texto" style="display: none;"></div>
@@ -82,7 +82,37 @@
 </body>
 
 </html>
+
+
+
 <script>
+function cadastrar() {
+        // aguardar();
+        var formulario = new URLSearchParams(new FormData(form_cadastro));
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+            
+            if (response.ok) {
+
+                window.location.href='Login.html';
+
+            } else {
+
+                console.log('Erro de cadastro!');
+                response.text().then(function (resposta) {
+                    div_erro.innerHTML = resposta;
+                });
+                // finalizar_aguardar();
+            }
+        });
+
+        return false;
+    }
+
+
+
     let erros = [];
     function verificar() {
         event.preventDefault();
@@ -125,7 +155,7 @@
             erros.push('CPNJ inválido')
         }
 
-        if (celular1.length < 15){
+        if (celular1.length < 14){
             erros.push('Celular inválido')
         }
 
@@ -156,7 +186,7 @@
             if (erros.length == 0) {
                 texto.style.display = 'none'
                 alert(`Obrigado por se cadastrar ${usuario.value}, verifique seu e-mail para a confirmação`)
-                window.location.assign("Login.html")
+                // window.location.assign("Login.html")
 
                 for (let contador = 0; contador < erros.length; contador++) {
                     texto.innerHTML += `${erros[contador]}<br>`
@@ -197,6 +227,6 @@
 </script>
 <script type="text/javascript">
         $("#numero_endereco").mask("000")
-        $("#celular").mask("(00) 00000-0000");
+        $("#celular").mask("(00)00000-0000");
         $("#cnpj").mask("00.000.000/0000-00");
 </script>
