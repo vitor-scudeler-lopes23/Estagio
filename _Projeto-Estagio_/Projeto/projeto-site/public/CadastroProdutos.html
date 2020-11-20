@@ -40,18 +40,18 @@
             <div class="containerE">
                 <h2>Cadastro estoque</h2>
                 <div class="caixaE">
-                    <form>
+                    <form id="form_cadastro" method="post" onsubmit="return verificarEs(), cadastrar()">
                         <label><span class="textoE">Nome estoque</span>
-                            <input type="text" class="caixasE" id="nomeE" placeholder="Digite o nome do estoque">
+                            <input name="nomeEs" type="text" class="caixasE" id="nomeE" placeholder="Digite o nome do estoque">
                         </label>
                         <label><span class="textoEE">Endereço do estoque</span>
-                            <input type="text" class="caixasE" id="enderecoE" placeholder="Digite o endereço do estoque">
+                            <input name="enderecoEs" type="text" class="caixasE" id="enderecoE" placeholder="Digite o endereço do estoque">
                         </label>
                         <label><span class="textoEN">Número do endereço</span>
-                            <input type="text" class="caixasE" id="numeroE" placeholder="Digite o número do endereço">
+                            <input name="NuenderecoEs" type="text" class="caixasE" id="numeroE" placeholder="Digite o número do endereço">
                         </label>
                         <label><span class="textoEC">Cep do endereço</span>
-                            <input type="text" class="caixasE" id="cepE" placeholder="Digite o cep do endereço">
+                            <input name="cepEs" type="text" class="caixasE" id="cepE" placeholder="Digite o cep do endereço">
                         </label>
                         <button class="btnE">Adicionar estoque</button>
                     </form>
@@ -73,6 +73,33 @@
     </div>
 </body>
 </html>
+<script>
+function cadastrar() {
+        // aguardar();
+        var formulario = new URLSearchParams(new FormData(form_cadastro));
+        fetch("/usuario/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+            
+            if (response.ok) {
+
+                // window.location.href='Login.html';
+
+            } else {
+
+                console.log('Erro de cadastro!');
+                response.text().then(function (resposta) {
+                    div_erro.innerHTML = resposta;
+                });
+                // finalizar_aguardar();
+            }
+        });
+
+        return false;
+    }
+</script>
+
 <script type="text/javascript">
     $("#quantiP").mask("0000000");
     $("#numeroE").mask("000");

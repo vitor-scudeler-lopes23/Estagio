@@ -48,6 +48,10 @@ router.post('/cadastrar', function(req, res, next) {
 		telefone : req.body.telefone,
 		endereco : req.body.endereco,
 		Nuendereco : req.body.Nuendereco,
+		nomeEs : req.body.nomeEs,
+		enderecoEs : req.body.enderecoEs,
+		NuenderecoEs : req.body.NuenderecoEs,
+		cepEs : req.body.cepEs
 
 	}).then(resultado => {
 		console.log(`Registro criado: ${resultado}`)

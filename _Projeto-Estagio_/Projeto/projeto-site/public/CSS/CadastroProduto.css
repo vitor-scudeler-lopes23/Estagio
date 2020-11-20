@@ -71,7 +71,7 @@
     margin: 0;
     position: relative;
     top: 8%;
-    left: 30%;
+    left: 46%;
 }
 
 .caixaCP{
@@ -79,7 +79,7 @@
     width: 50%;
     height: 206px;
     position: relative;
-    left: 23%;
+    left: 38%;
     top: 15%;
     padding-top: 6%;
     border-radius: 20px;
@@ -142,9 +142,9 @@
 
 .containerE h2{
     margin: 0;
-    position: relative;
+    position: absolute;
     top: 7.2%;
-    left: 39%;
+    left: 20%;
 }
 
 .caixaE{
@@ -152,8 +152,8 @@
     width: 50%;
     height: 292px;
     position: relative;
-    left: 29%;
-    top: 10%;
+    left: 10%;
+    top: 18%;
     padding-top: 2%;
     border-radius: 20px;
 }
