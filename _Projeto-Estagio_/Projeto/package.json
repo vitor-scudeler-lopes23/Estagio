@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./projeto-site/bin/www",
+    "dev":"nodemon ./projeto-site/bin/www",
     "postinstall": "cd projeto-site && npm install"
   },
   "description": "Projeto Modelo para o Projeto Individual para as turmas de 1º Semestre - ADS - 2020/2 - Bandtec Digital School",

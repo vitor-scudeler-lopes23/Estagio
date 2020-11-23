@@ -27,6 +27,9 @@
           <h2>Movimento produtos</h2>
             <div class="caixaCP">
                 <form>
+                    <label><span class="textoCP">idProduto</span>
+                        <input type="text" class="caixas" id="nomeP" placeholder="Digite o id do produto">
+                    </label>
                     <label><span class="textoCP">Nome produto</span>
                         <input type="text" class="caixas" id="nomeP" placeholder="Digite o nome do produto">
                     </label>
@@ -40,7 +43,8 @@
             <div class="containerE">
                 <h2>Cadastro estoque</h2>
                 <div class="caixaE">
-                    <form id="form_cadastro" method="post" onsubmit="return verificarEs(), cadastrar()">
+                                                                    <!-- verificarEs()    -->
+                    <form id="form_cadastroEs" method="post" onsubmit="return cadastrarEs()">
                         <label><span class="textoE">Nome estoque</span>
                             <input name="nomeEs" type="text" class="caixasE" id="nomeE" placeholder="Digite o nome do estoque">
                         </label>
@@ -74,21 +78,21 @@
 </body>
 </html>
 <script>
-function cadastrar() {
+function cadastrarEs() {
         // aguardar();
-        var formulario = new URLSearchParams(new FormData(form_cadastro));
-        fetch("/usuario/cadastrar", {
+        var formulario = new URLSearchParams(new FormData(form_cadastroEs));
+        fetch("/cadastroEs/cadastrar", {
             method: "POST",
             body: formulario
         }).then(function (response) {
             
             if (response.ok) {
 
-                // window.location.href='Login.html';
+                alert(`Seu estoque ${nomeEs.value} foi cadastrado com sucesso!`)
 
             } else {
 
-                console.log('Erro de cadastro!');
+                alert('Erro ao cadastra o estoque!');
                 response.text().then(function (resposta) {
                     div_erro.innerHTML = resposta;
                 });
