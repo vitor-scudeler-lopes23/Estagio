@@ -24,7 +24,7 @@
     font-size: 30px;
     cursor: pointer;
     color: white;
-    padding: 10px 15px;
+    padding: 3px 15px;
     border: none;
   }
   
@@ -80,7 +80,7 @@
     height: 230px;
     position: absolute;
     left: 20%;
-    top: 20%;
+    top: 15%;
     padding-top: 2%;
     border-radius: 20px;
 }

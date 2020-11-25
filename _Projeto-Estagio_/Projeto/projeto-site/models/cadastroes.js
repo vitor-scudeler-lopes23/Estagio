@@ -15,24 +15,29 @@ module.exports = (sequelize, DataTypes) => {
 			primaryKey: true,
 			autoIncrement: true
 		},		
-		nomeEs: {
+		nomees: {
 			field: 'NomeEstoque',
 			type: DataTypes.STRING,
 			allowNull: false
 		},
-		enderecoEs: {
+		enderecoes: {
 			field: 'EnderecoEstoque',
 			type: DataTypes.STRING,
 			allowNull: false
 		},
-		nuenderecoEs: {
+		nuenderecoes: {
 			field: 'NumeroLocal',
 			type: DataTypes.STRING,
 			allowNull: false
 		},
-		cepEs: {
+		cepes: {
 			field: 'CepEstoque',
 			type: DataTypes.STRING,
+			allowNull: false
+		},
+		empresaes: {
+			field: 'fkEmpresa',
+			type: DataTypes.INTEGER,
 			allowNull: false
 		},
 		},

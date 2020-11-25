@@ -44,20 +44,20 @@
                 <h2>Cadastro estoque</h2>
                 <div class="caixaE">
                                                                     <!-- verificarEs()    -->
-                    <form id="form_cadastroEs" method="post" onsubmit="return cadastrarEs()">
+                    <form id="form_cadastro" method="post" onsubmit="return cadastrar()"">
                         <label><span class="textoE">Nome estoque</span>
-                            <input name="nomeEs" type="text" class="caixasE" id="nomeE" placeholder="Digite o nome do estoque">
+                            <input name="nomees" type="text" class="caixasE" id="nomeE" placeholder="Digite o nome do estoque">
                         </label>
                         <label><span class="textoEE">Endereço do estoque</span>
-                            <input name="enderecoEs" type="text" class="caixasE" id="enderecoE" placeholder="Digite o endereço do estoque">
+                            <input name="enderecoes" type="text" class="caixasE" id="enderecoE" placeholder="Digite o endereço do estoque">
                         </label>
                         <label><span class="textoEN">Número do endereço</span>
-                            <input name="NuenderecoEs" type="text" class="caixasE" id="numeroE" placeholder="Digite o número do endereço">
+                            <input name="nuenderecoes" type="text" class="caixasE" id="numeroE" placeholder="Digite o número do endereço">
                         </label>
                         <label><span class="textoEC">Cep do endereço</span>
-                            <input name="cepEs" type="text" class="caixasE" id="cepE" placeholder="Digite o cep do endereço">
+                            <input name="cepes" type="text" class="caixasE" id="cepE" placeholder="Digite o cep do endereço">
                         </label>
-                        <button class="btnE">Adicionar estoque</button>
+                        <button type="submit" class="btnE">Adicionar estoque</button>
                     </form>
                 </div>
             </div>
@@ -78,24 +78,24 @@
 </body>
 </html>
 <script>
-function cadastrarEs() {
+function cadastrar() {
         // aguardar();
-        var formulario = new URLSearchParams(new FormData(form_cadastroEs));
-        fetch("/cadastroEs/cadastrar", {
+        var formulario = new URLSearchParams(new FormData(form_cadastro));
+        fetch("/cadastroes/cadastrar", {
             method: "POST",
             body: formulario
         }).then(function (response) {
             
             if (response.ok) {
 
-                alert(`Seu estoque ${nomeEs.value} foi cadastrado com sucesso!`)
+                alert(`Seu estoque ${nomees.value} foi cadastrado com sucesso!`)
 
             } else {
 
                 alert('Erro ao cadastra o estoque!');
-                response.text().then(function (resposta) {
-                    div_erro.innerHTML = resposta;
-                });
+                // response.text().then(function (resposta) {
+                //     div_erro.innerHTML = resposta;
+                // });
                 // finalizar_aguardar();
             }
         });

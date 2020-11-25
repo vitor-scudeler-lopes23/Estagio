@@ -52,7 +52,7 @@ module.exports = (sequelize, DataTypes) => {
 			field: 'Senha',
 			type: DataTypes.STRING,
 			allowNull: false
-		},
+		}
 		},
 	{
 		tableName: 'Empresa', 
