@@ -81,14 +81,14 @@
 function cadastrar() {
         // aguardar();
         var formulario = new URLSearchParams(new FormData(form_cadastro));
-        fetch("/cadastroes/cadastrar", {
+        fetch("/estoque/cadastrar", {
             method: "POST",
             body: formulario
         }).then(function (response) {
             
             if (response.ok) {
 
-                alert(`Seu estoque ${nomees.value} foi cadastrado com sucesso!`)
+                alert(`Seu estoque ${nomeE.value} foi cadastrado com sucesso!`);
 
             } else {
 

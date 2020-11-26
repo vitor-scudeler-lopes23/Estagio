@@ -43,7 +43,7 @@ router.post('/cadastrar', function(req, res, next) {
 	Estoque.create({
 		nomees : req.body.nomees,
 		enderecoes : req.body.enderecoes,
-		nuenderecoes : req.body.Nuenderecoes,
+		nuenderecoes : req.body.nuenderecoes,
 		cepes : req.body.cepes
 
 	}).then(resultado => {

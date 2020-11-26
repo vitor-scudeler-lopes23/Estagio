@@ -35,11 +35,6 @@ module.exports = (sequelize, DataTypes) => {
 			type: DataTypes.STRING,
 			allowNull: false
 		},
-		empresaes: {
-			field: 'fkEmpresa',
-			type: DataTypes.INTEGER,
-			allowNull: false
-		},
 		},
 	{
 		tableName: 'Estoque',
