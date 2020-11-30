@@ -26,25 +26,21 @@
       <div class="containerCP">
           <h2>Movimento produtos</h2>
             <div class="caixaCP">
-                <form>
-                    <label><span class="textoCP">idProduto</span>
-                        <input type="text" class="caixas" id="nomeP" placeholder="Digite o id do produto">
-                    </label>
+                <form id="form_cadastrop" method="post" onsubmit="return cadastrarp()">
                     <label><span class="textoCP">Nome produto</span>
-                        <input type="text" class="caixas" id="nomeP" placeholder="Digite o nome do produto">
+                        <input name="nomep" type="text" class="caixas" id="nomeP" placeholder="Digite o nome do produto">
                     </label>
                     <label><span class="textoCPQ">Quantidade de produtos</span>
-                        <input type="text" class="caixas" id="quantiP" placeholder="Digite a quantidade">
+                        <input name="qtdp" type="text" class="caixas" id="quantiP" placeholder="Digite a quantidade">
                     </label>
-                    <button class="btn esquerdaBTN">Adicionar</button>
-                    <button class="btn">Remover</button>
+                    <button type="submit" class="btn esquerdaBTN">Adicionar</button>
                 </form>
             </div>
             <div class="containerE">
                 <h2>Cadastro estoque</h2>
                 <div class="caixaE">
                                                                     <!-- verificarEs()    -->
-                    <form id="form_cadastro" method="post" onsubmit="return cadastrar()"">
+                    <form id="form_cadastroe" method="post" onsubmit="return cadastrare()">
                         <label><span class="textoE">Nome estoque</span>
                             <input name="nomees" type="text" class="caixasE" id="nomeE" placeholder="Digite o nome do estoque">
                         </label>
@@ -78,9 +74,9 @@
 </body>
 </html>
 <script>
-function cadastrar() {
+function cadastrare() {
         // aguardar();
-        var formulario = new URLSearchParams(new FormData(form_cadastro));
+        var formulario = new URLSearchParams(new FormData(form_cadastroe));
         fetch("/estoque/cadastrar", {
             method: "POST",
             body: formulario
@@ -102,6 +98,32 @@ function cadastrar() {
 
         return false;
     }
+
+    function cadastrarp() {
+        // aguardar();
+        var formulario = new URLSearchParams(new FormData(form_cadastrop));
+        fetch("/produto/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+            
+            if (response.ok) {
+
+                alert(`Seu produto ${nomeP.value} foi cadastrado com sucesso!`);
+
+            } else {
+
+                alert('Erro ao cadastra o estoque!');
+                // response.text().then(function (resposta) {
+                //     div_erro.innerHTML = resposta;
+                // });
+                // finalizar_aguardar();
+            }
+        });
+
+        return false;
+    }
+
 </script>
 
 <script type="text/javascript">

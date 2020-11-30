@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var sequelize = require('../models').sequelize;
-var Estoque = require('../models').Estoque;
+var Produto = require('../models').Produto;
 
 let sessoes = [];
 
@@ -16,7 +16,7 @@ router.post('/autenticar', function(req, res, next) {
 	console.log(instrucaoSql);
 
 	sequelize.query(instrucaoSql, {
-		model: Estoque
+		model: Produto
 	}).then(resultado => {
 		console.log(`Encontrados: ${resultado.length}`);
 
@@ -40,12 +40,10 @@ router.post('/autenticar', function(req, res, next) {
 router.post('/cadastrar', function(req, res, next) {
 	console.log('Criando um usuário');
 	
-	Estoque.create({
-		nomees : req.body.nomees,
-		enderecoes : req.body.enderecoes,
-		nuenderecoes : req.body.nuenderecoes,
-		cepes : req.body.cepes,
-		fkempresa: 2
+	Produto.create({
+		nomep : req.body.nomep,
+        qtdp : req.body.qtdp,
+        fkestoquep: 1
 	}).then(resultado => {
 		console.log(`Registro criado: ${resultado}`)
         res.send(resultado);

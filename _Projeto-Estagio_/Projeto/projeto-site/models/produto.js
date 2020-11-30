@@ -8,45 +8,35 @@ https://codewithhugo.com/sequelize-data-types-a-practical-guide/
 
 
 module.exports = (sequelize, DataTypes) => {
-    let Estoque = sequelize.define('Estoque',{ //'Usuario' nome da Tabela
-		idEs: {
-			field: 'idEstoque', //'id' nome da coluna da tabela...
+    let Produto = sequelize.define('Produto',{ //'Usuario' nome da Tabela
+		idp: {
+			field: 'idProduto', //'id' nome da coluna da tabela...
 			type: DataTypes.INTEGER, //"INTEGER" modelo da minha tabela
 			primaryKey: true,
 			autoIncrement: true
 		},		
-		nomees: {
-			field: 'NomeEstoque',
+		nomep: {
+			field: 'NomeProduto',
 			type: DataTypes.STRING,
 			allowNull: false
 		},
-		enderecoes: {
-			field: 'EnderecoEstoque',
+		qtdp: {
+			field: 'QtdProduto',
 			type: DataTypes.STRING,
 			allowNull: false
 		},
-		nuenderecoes: {
-			field: 'NumeroLocal',
-			type: DataTypes.STRING,
-			allowNull: false
-		},
-		cepes: {
-			field: 'CepEstoque',
-			type: DataTypes.STRING,
-			allowNull: false
-		},
-		fkempresa: {
-			field: 'fkEmpresa',
+		fkestoquep: {
+			field: 'fkEstoque',
 			type: DataTypes.INTEGER,
 			allowNull: false
 		},
 		},
 	{
-		tableName: 'Estoque',
+		tableName: 'Produto',
 		freezeTableName: true, 
 		underscored: true,
 		timestamps: false,
 	});
 
-	return Estoque;
+	return Produto;
 };
