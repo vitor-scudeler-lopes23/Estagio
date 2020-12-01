@@ -116,7 +116,7 @@ box-shadow: 3px 1px 3px black;
     margin: 0 auto;
     position: relative;
     top: 24%;
-    left: 24%;
+    left: 28%;
 }
 
 .containerS p{
@@ -155,7 +155,7 @@ box-shadow: 3px 1px 3px black;
 
 .textoP{
     position: relative;
-    top: 25%;
+    top: 15%;
     left: 110%;
     font-size: 25px;
 }
