@@ -70,6 +70,14 @@ box-shadow: 3px 1px 3px black;
 
 /* Texto saiba mais abaixo */
 
+.saiba2{
+    text-align: center;
+    position: absolute;
+    top: 35%;
+    left: 20%;
+}
+
+
 .saiba{
     text-align: center;
     position: absolute;
@@ -108,13 +116,13 @@ box-shadow: 3px 1px 3px black;
     margin: 0 auto;
     position: relative;
     top: 24%;
-    left: 20%;
+    left: 24%;
 }
 
 .containerS p{
     position: relative;
     top: 26%;
-    left: 14%;
+    left: 21%;
     font-size: 21px;
 }
 
@@ -155,20 +163,20 @@ box-shadow: 3px 1px 3px black;
 .containerP p{
     font-size: 21px;
     position: relative;
-    top: 25%;
-    left: 100%;
+    top: 16%;
+    left: 100%
 }
 
 .imagemP{
-    background-image: url('../Imagens/controle\ de\ estoque.png');
+    background-image: url(../Imagens/controle\ de\ estoque.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
     left: 5%;
-    height: 40%;
+    height: 26%;
     width: 40%;
-    margin-top: 6%;
+    margin-top: 7%;
 }
 
 /* Parte produto a cima */
@@ -182,13 +190,13 @@ box-shadow: 3px 1px 3px black;
 }
 
 .imagemPB{
-    background-image: url('../Imagens/fundo_ouvidoria.jpeg');
+    background-image: url(../Imagens/fundo_ouvidoria.jpeg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
     width: 58%;
-    height: 85.2%;
+    height: 59.9%;
     left: 42%;
 }
 
@@ -200,15 +208,13 @@ box-shadow: 3px 1px 3px black;
 .caixa{
     background-color: #BDBDBD;
     width: 450px;
-    height: 524px;
+    height: 521px;
     position: absolute;
     left: 8%;
-    top: 239.5%;
+    top: 168.5%;
     font-size: 75%;
     border-radius: 20px;
     opacity: 90%;
-    animation-name: anm_caixa;
-    animation-duration: 2.5s;
 }
 
 .texto_caixa{
@@ -243,10 +249,9 @@ box-shadow: 3px 1px 3px black;
 .enviar{
     width: 188px;
     height: 30px;
-    margin-top: 5px;
     margin-bottom: 20px;
     margin-left: 28%;
-    font-size: 18px;
+    font-size: 17px;
     background-color: transparent;
     border: transparent;
     cursor: pointer;
