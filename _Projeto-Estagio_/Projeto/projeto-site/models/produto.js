@@ -20,9 +20,14 @@ module.exports = (sequelize, DataTypes) => {
 			type: DataTypes.STRING,
 			allowNull: false
 		},
-		qtdp: {
-			field: 'QtdProduto',
+		tipoproduto: {
+			field: 'TipoProduto',
 			type: DataTypes.STRING,
+			allowNull: false
+		},
+		qtdproduto: {
+			field: 'QuantidadeProdutos',
+			type: DataTypes.INTEGER,
 			allowNull: false
 		},
 		fkestoquep: {
