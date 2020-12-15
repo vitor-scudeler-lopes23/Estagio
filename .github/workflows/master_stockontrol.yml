@@ -31,5 +31,5 @@ jobs:
       with:
         app-name: 'stockontrol'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_a86dbd48be1042588d28233cbb98597f }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_567e4100d40e4e6cab9bc1f1c52e03b3 }}
         package: .
